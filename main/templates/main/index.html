@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<br />
+<br />
+<h1 style="text-align: center;"><strong>PLEASE INPUT VOUCHER CODE</strong></h1>
+<p></p>
+
+<div align="center" class="search-container">
+	<form role="search" method="get" action="#">
+		<input type="text" placeholder="Voucher Code" name="q" size="45" action="{% url 'main:index' %}" value="{{ request.GET.q }}">
+		<button type="submit"><i class="fa fa-search"></i></button>
+	</form>
+</div>
+
+{% for voucher in voucher.all %}
+	{% if is_main == 0 %}
+
+		<h2 style="text-align: center;">You have input Voucher {{ voucher.id }}</h2>
+		<p style="text-align: center;">Voucher code: {{ voucher.voucher_code }}
+
+		<br />
+		<br />
+
+		You will get a {{ voucher.discount }}% discount
+
+	{% endif %}
+{% endfor %}

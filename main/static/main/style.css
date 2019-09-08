@@ -1,0 +1,24 @@
+body {
+    background: white url("images/background.jpg");
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+}
+
+input[type=text] {
+  padding: 6px;
+  font-size: 17px;
+  border: 1;
+  border-color: #e5e5e5
+}
+
+.search-container button {
+  padding: 9px 12px;
+  background: #ccc;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #aaa;
+}
